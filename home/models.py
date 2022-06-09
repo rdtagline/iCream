@@ -10,7 +10,7 @@ class HomePage(Page):
     template = "home/home_page.html"
     content = StreamField(
         [
-            ('cards', ImageBlock()),
+            ('slides', SlideBlock()),
         ]
     )
     content_panels = Page.content_panels + [

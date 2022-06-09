@@ -1,0 +1,13 @@
+{% load wagtailimages_tags %}
+
+{% for slide in self.slides %}
+    {% image slide.image fill-300x200 as img %}
+    <img src="{{ img.url }}" alt="{{ img.alt }}">
+    {{ slide.title }}
+    {{ slide.image }}
+    {{ slide.caption }}
+    {% if slide.button_page %}
+    <a href="{{ slide.button_page.url }}">{{ slide.button_text }}</a>
+    {% else %}{% endif %}
+
+{% endfor %}
