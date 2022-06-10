@@ -1,0 +1,16 @@
+{% load wagtailimages_tags %}
+
+{% for about in self.abouts %}
+    {{ self.heading }}
+    {{ about.left_title }}
+    {{ about.left_caption }}
+    {{ about.left_text }}
+
+    {{ about.image }}
+
+    {{ about.right_title }}
+    {{ about.right_text }}
+    {% for caption in about.right_caption %}
+        {{ caption.list }}
+    {% endfor %}
+{% endfor %}
