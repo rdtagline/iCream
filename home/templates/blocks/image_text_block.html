@@ -1,16 +1,40 @@
 {% load wagtailimages_tags %}
+{% load static %}
 
-{% for content in self.image_text %}
-    {{ self.heading }}
-    {{ content.left_title }}
-    {{ content.left_caption }}
-    {{ content.left_text }}
-
-    {{ content.image }}
-
-    {{ content.right_title }}
-    {{ content.right_text }}
-    {% for caption in content.right_caption %}
-        {{ caption.list }}
-    {% endfor %}
-{% endfor %}
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <h1 class="section-title position-relative text-center mb-5">{{ self.heading }}</h1>
+            </div>
+        </div>
+        <div class="row">
+            {% for content in self.image_text %}
+                <div class="col-lg-4 py-5">
+                    <h4 class="font-weight-bold mb-3">{{ content.left_title }}</h4>
+                    <h5 class="text-muted mb-3">{{ content.left_caption }}</h5>
+                    <p>{{ content.left_text }}</p>
+                    {% if content.left_button_page %}
+                        <a href="{{ content.left_button_page.url }}" class="btn btn-secondary mt-2">{{ content.left_button_text }}</a>
+                    {% else %}{% endif %}
+                </div>
+                {% image content.image original as img %}
+                <div class="col-lg-4" style="min-height: 400px;">
+                    <div class="position-relative h-100 rounded overflow-hidden">
+                        <img class="position-absolute w-100 h-100" src="{{ img.url }}" style="object-fit: cover;" alt="{{ img.alt }}">
+                    </div>
+                </div>
+                <div class="col-lg-4 py-5">
+                    <h4 class="font-weight-bold mb-3">{{ content.right_title }}</h4>
+                    <p>{{ content.right_text }}</p>
+                    {% for caption in content.right_caption %}
+                        <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>{{ caption.list }}</h5>
+                    {% endfor %}
+                    {% if content.right_button_page %}
+                        <a href="{{ content.right_button_page.url }}" class="btn btn-primary mt-2">{{ content.right_button_text }}</a>
+                    {% else %}{% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
