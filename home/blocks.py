@@ -16,3 +16,28 @@ class SlideBlock(StructBlock):
 
     class Meta:
         template = "blocks/slides_block.html"
+
+
+class ImageTextBlock(StructBlock):
+    heading = CharBlock(max_length=255, required=False)
+    image_text = ListBlock(StructBlock(
+        [
+            ("left_title", CharBlock(max_length=255, required=False)),
+            ("left_caption", CharBlock(max_length=255, required=False)),
+            ("left_text", TextBlock(max_length=255, required=False)),
+            ("left_button_text", TextBlock(max_length=255, required=False)),
+            ("left_button_page", PageChooserBlock(required=False)),
+
+            ("image", ImageChooserBlock(required=False)),
+
+            ("right_title", CharBlock(max_length=255, required=False)),
+            ("right_text", TextBlock(max_length=255, required=False)),
+            ("right_caption", ListBlock(StructBlock(
+                [("list", CharBlock(max_length=255, required=False))]))),
+            ("right_button_text", TextBlock(max_length=255, required=False)),
+            ("right_button_page", PageChooserBlock(required=False)),
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/image_text_block.html"
