@@ -18,9 +18,9 @@ class SlideBlock(StructBlock):
         template = "blocks/slides_block.html"
 
 
-class AboutBlock(StructBlock):
+class ImageTextBlock(StructBlock):
     heading = CharBlock(max_length=255, required=False)
-    abouts = ListBlock(StructBlock(
+    image_text = ListBlock(StructBlock(
         [
             ("left_title", CharBlock(max_length=255, required=False)),
             ("left_caption", CharBlock(max_length=255, required=False)),
@@ -40,4 +40,4 @@ class AboutBlock(StructBlock):
     ))
 
     class Meta:
-        template = "blocks/abouts_block.html"
+        template = "blocks/image_text_block.html"

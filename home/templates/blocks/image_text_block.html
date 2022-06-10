@@ -1,0 +1,16 @@
+{% load wagtailimages_tags %}
+
+{% for content in self.image_text %}
+    {{ self.heading }}
+    {{ content.left_title }}
+    {{ content.left_caption }}
+    {{ content.left_text }}
+
+    {{ content.image }}
+
+    {{ content.right_title }}
+    {{ content.right_text }}
+    {% for caption in content.right_caption %}
+        {{ caption.list }}
+    {% endfor %}
+{% endfor %}
