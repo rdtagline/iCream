@@ -11,7 +11,8 @@ class HomePage(Page):
     content = StreamField(
         [
             ('slides', SlideBlock()),
-            ('image_text', ImageTextBlock())
+            ('image_text', ImageTextBlock()),
+            ('video_image_text', VideoImageTextBlock())
         ]
     )
     content_panels = Page.content_panels + [
