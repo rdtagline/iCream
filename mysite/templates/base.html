@@ -17,39 +17,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
+        
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
+        
         <!-- Libraries Stylesheet -->
-        <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
+        <link rel="stylesheet" type="text/css" href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'lib/owlcarousel/assets/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'lib/lightbox/css/lightbox.min.css' %}">
+        
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
     </head>
-
+    
     <body>
         {% wagtailuserbar %}
-
+        
         {% block content %}{% endblock %}
-
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
         
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="static/lib/easing/easing.min.js"></script>
-        <script src="static/lib/waypoints/waypoints.min.js"></script>
-        <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="static/lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="static/lib/lightbox/js/lightbox.min.js"></script>
-
+        <script type="text/javascript" src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+        
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
