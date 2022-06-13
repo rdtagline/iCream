@@ -59,3 +59,19 @@ class VideoImageTextBlock(StructBlock):
 
     class Meta:
         template = "blocks/video_image_text_block.html"
+
+
+class ServiceBlock(StructBlock):
+    heading = CharBlock(max_length=255, required=False)
+    services = ListBlock(StructBlock(
+        [
+            ("image", ImageChooserBlock(required=False)),
+            ("title", CharBlock(max_length=255, required=False)),
+            ("text", TextBlock(max_length=255, required=False)),
+            ("button_text", TextBlock(max_length=255, required=False)),
+            ("button_page", PageChooserBlock(required=False))
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/services_block.html"

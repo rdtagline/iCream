@@ -12,7 +12,8 @@ class HomePage(Page):
         [
             ('slides', SlideBlock()),
             ('image_text', ImageTextBlock()),
-            ('video_image_text', VideoImageTextBlock())
+            ('video_image_text', VideoImageTextBlock()),
+            ('services', ServiceBlock())
         ]
     )
     content_panels = Page.content_panels + [
