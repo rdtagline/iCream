@@ -91,3 +91,20 @@ class MenuBlock(StructBlock):
 
     class Meta:
         template = "blocks/menu_block.html"
+
+
+class TopbarBlock(StructBlock):
+    topbar = ListBlock(StructBlock(
+        [
+            ("menu_text", CharBlock(max_length=255, required=False)),
+            ("menu_page", PageChooserBlock(required=False))
+        ]
+    ))
+    twitter = URLBlock(max_length=255, required=False)
+    facebook = URLBlock(max_length=255, required=False)
+    instagram = URLBlock(max_length=255, required=False)
+    linkedin = URLBlock(max_length=255, required=False)
+    youtube = URLBlock(max_length=255, required=False)
+
+    class Meta:
+        template = "blocks/topbar_block.html"
