@@ -13,7 +13,8 @@ class HomePage(Page):
             ('slides', SlideBlock()),
             ('image_text', ImageTextBlock()),
             ('video_image_text', VideoImageTextBlock()),
-            ('services', ServiceBlock())
+            ('services', ServiceBlock()),
+            ("menus", MenuBlock())
         ]
     )
     content_panels = Page.content_panels + [

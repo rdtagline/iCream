@@ -75,3 +75,19 @@ class ServiceBlock(StructBlock):
 
     class Meta:
         template = "blocks/services_block.html"
+
+
+class MenuBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+    title_page = PageChooserBlock(required=False)
+    menus = ListBlock(StructBlock(
+        [
+            ("left_menu_text", CharBlock(max_length=255, required=False)),
+            ("left_menu_page", PageChooserBlock(required=False)),
+            ("right_menu_text", CharBlock(max_length=255, required=False)),
+            ("right_menu_page", PageChooserBlock(required=False)),
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/menu_block.html"
