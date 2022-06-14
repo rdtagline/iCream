@@ -136,3 +136,20 @@ class ProductBlock(StructBlock):
 
     class Meta:
         template = "blocks/products_block.html"
+
+
+class TeamMemberBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+    teams = ListBlock(StructBlock(
+        [
+            ("image", ImageChooserBlock(required=False)),
+            ("name", CharBlock(max_length=255, required=False)),
+            ("designation", CharBlock(max_length=255, required=False)),
+            ("twitter", URLBlock(max_length=255, required=False)),
+            ("facebook", URLBlock(max_length=255, required=False)),
+            ("linkedin", URLBlock(max_length=255, required=False)),
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/team_member_block.html"
