@@ -120,3 +120,19 @@ class ImageBlock(StructBlock):
 
     class Meta:
         template = "blocks/images_block.html"
+
+
+class ProductBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+    products = ListBlock(StructBlock(
+        [
+            ("title", CharBlock(max_length=255, required=False, help_text="")),
+            ("caption", CharBlock(max_length=255, required=False)),
+            ("image", ImageChooserBlock(required=False)),
+            ("button_text", TextBlock(max_length=255, required=False)),
+            ("button_page", PageChooserBlock(required=False)),
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/products_block.html"
