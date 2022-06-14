@@ -75,3 +75,36 @@ class ServiceBlock(StructBlock):
 
     class Meta:
         template = "blocks/services_block.html"
+
+
+class MenuBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+    title_page = PageChooserBlock(required=False)
+    menus = ListBlock(StructBlock(
+        [
+            ("left_menu_text", CharBlock(max_length=255, required=False)),
+            ("left_menu_page", PageChooserBlock(required=False)),
+            ("right_menu_text", CharBlock(max_length=255, required=False)),
+            ("right_menu_page", PageChooserBlock(required=False)),
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/menu_block.html"
+
+
+class TopbarBlock(StructBlock):
+    topbar = ListBlock(StructBlock(
+        [
+            ("menu_text", CharBlock(max_length=255, required=False)),
+            ("menu_page", PageChooserBlock(required=False))
+        ]
+    ))
+    twitter = URLBlock(max_length=255, required=False)
+    facebook = URLBlock(max_length=255, required=False)
+    instagram = URLBlock(max_length=255, required=False)
+    linkedin = URLBlock(max_length=255, required=False)
+    youtube = URLBlock(max_length=255, required=False)
+
+    class Meta:
+        template = "blocks/topbar_block.html"
