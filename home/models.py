@@ -15,7 +15,8 @@ class HomePage(Page):
             ('video_image_text', VideoImageTextBlock()),
             ('services', ServiceBlock()),
             ('menus', MenuBlock()),
-            ('topbar', TopbarBlock())
+            ('topbar', TopbarBlock()),
+            ('images', ImageBlock())
         ]
     )
     content_panels = Page.content_panels + [
