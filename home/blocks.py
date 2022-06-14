@@ -153,3 +153,18 @@ class TeamMemberBlock(StructBlock):
 
     class Meta:
         template = "blocks/team_member_block.html"
+
+
+class ClientBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+    clients = ListBlock(StructBlock(
+        [
+            ("name", CharBlock(max_length=255, required=False)),
+            ("profession", CharBlock(max_length=255, required=False)),
+            ("text", TextBlock(max_length=255, required=False)),
+            ("image", ImageChooserBlock(required=False)),
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/client_block.html"
