@@ -19,7 +19,8 @@ class HomePage(Page):
             ('images', ImageBlock()),
             ('products', ProductBlock()),
             ("teams", TeamMemberBlock()),
-            ("clients", ClientBlock())
+            ("clients", ClientBlock()),
+            ('footer', FooterBlock())
         ]
     )
     content_panels = Page.content_panels + [
