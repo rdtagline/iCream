@@ -108,3 +108,15 @@ class TopbarBlock(StructBlock):
 
     class Meta:
         template = "blocks/topbar_block.html"
+
+
+class ImageBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+    images = ListBlock(StructBlock(
+        [
+            ("image", ImageChooserBlock(required=False))
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/images_block.html"
