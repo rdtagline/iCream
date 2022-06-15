@@ -46,14 +46,14 @@
                         <p class="mb-0">{{ settings.site_settings.FooterSettings.closing }}</p>
                         {% endif %}
                     </div>
-                    {% if settings.site_settings.FooterSettings.domain_name %}
-                    <div class="col-12">
-                        <p class="m-0">&copy; <a href="{{ settings.site_settings.FooterSettings.related_page.url }}">{{ settings.site_settings.FooterSettings.domain_name }}</a>. {{ settings.site_settings.FooterSettings.domain_text }} <a href="{{ settings.site_settings.FooterSettings.designer_url }}">{{ settings.site_settings.FooterSettings.designer_name }}</a>
-                        </p>
-                    </div>
-                    {% endif %}
                 </div>
             </div>
+            {% if settings.site_settings.FooterSettings.domain_name %}
+            <div class="col-12">
+                <p class="m-0">&copy; <a href="{{ settings.site_settings.FooterSettings.related_page.url }}">{{ settings.site_settings.FooterSettings.domain_name }}</a>. {{ settings.site_settings.FooterSettings.domain_text }} <a href="{{ settings.site_settings.FooterSettings.designer_url }}">{{ settings.site_settings.FooterSettings.designer_name }}</a>
+                </p>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
