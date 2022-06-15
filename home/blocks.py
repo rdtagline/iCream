@@ -168,32 +168,3 @@ class ClientBlock(StructBlock):
 
     class Meta:
         template = "blocks/client_block.html"
-
-
-class FooterBlock(StructBlock):
-    heading = CharBlock(max_length=255, required=False)
-    heading_page = PageChooserBlock(required=False)
-    footer = ListBlock(StructBlock(
-        [
-            ("left_title", CharBlock(max_length=255, required=False)),
-            ("address", TextBlock(max_length=255, required=False)),
-            ("phone", TextBlock(max_length=255, required=False)),
-            ("right_title", CharBlock(max_length=255, required=False)),
-            ("opening", TextBlock(max_length=255, required=False)),
-            ("closing", TextBlock(max_length=255, required=False)),
-
-            ("twitter", URLBlock(max_length=255, required=False)),
-            ("facebook", URLBlock(max_length=255, required=False)),
-            ("linkedin", URLBlock(max_length=255, required=False)),
-            ("instagram", URLBlock(max_length=255, required=False)),
-
-            ("domain_name", CharBlock(max_length=255, required=False)),
-            ("domain_page", PageChooserBlock(required=False)),
-            ("domain_text", TextBlock(max_length=255, required=False)),
-            ("designer_name", CharBlock(max_length=255, required=False)),
-            ("designer_url", URLBlock(max_length=255, required=False)),
-        ]
-    ))
-
-    class Meta:
-        template = "blocks/footer_block.html"
