@@ -15,11 +15,6 @@ class FooterSettings(BaseSetting):
     opening = models.TextField(max_length=255, blank=True, null=True)
     closing = models.TextField(max_length=255, blank=True, null=True)
 
-    twitter = models.URLField(max_length=255, blank=True, null=True)
-    facebook = models.URLField(max_length=255, blank=True, null=True)
-    linkedin = models.URLField(max_length=255, blank=True, null=True)
-    instagram = models.URLField(max_length=255, blank=True, null=True)
-
     domain_name = models.CharField(max_length=255, blank=True, null=True)
     domain_text = models.TextField(max_length=255, blank=True, null=True)
 
@@ -38,16 +33,32 @@ class FooterSettings(BaseSetting):
                 FieldPanel("opening"),
                 FieldPanel("closing"),
 
-                FieldPanel("twitter"),
-                FieldPanel("facebook"),
-                FieldPanel("linkedin"),
-                FieldPanel("instagram"),
-
                 FieldPanel("domain_name"),
                 FieldPanel("domain_text"),
 
                 FieldPanel("designer_name"),
                 FieldPanel("designer_url"),
             ], heading="Footer Settings"
+        )
+    ]
+
+
+@register_setting
+class SocialMediaSettings(BaseSetting):
+    twitter = models.URLField(max_length=255, blank=True, null=True)
+    facebook = models.URLField(max_length=255, blank=True, null=True)
+    linkedin = models.URLField(max_length=255, blank=True, null=True)
+    instagram = models.URLField(max_length=255, blank=True, null=True)
+    youtube = models.URLField(max_length=255, blank=True, null=True)
+
+    panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel("twitter"),
+                FieldPanel("facebook"),
+                FieldPanel("linkedin"),
+                FieldPanel("instagram"),
+                FieldPanel("youtube"),
+            ], heading="Social Media Settings"
         )
     ]
