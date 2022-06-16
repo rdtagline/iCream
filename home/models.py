@@ -14,8 +14,6 @@ class HomePage(Page):
             ('image_text', ImageTextBlock()),
             ('video_image_text', VideoImageTextBlock()),
             ('services', ServiceBlock()),
-            ('menus', MenuBlock()),
-            ('topbar', TopbarBlock()),
             ('images', ImageBlock()),
             ('products', ProductBlock()),
             ("teams", TeamMemberBlock()),

@@ -1,0 +1,48 @@
+{% load menus_tags %}
+{% get_menu "top-bar" as navigation %}
+
+{% if navigation.menu_items.all %}
+<div class="container-fluid bg-primary py-3 d-none d-md-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                {% for content in navigation.menu_items.all %}
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white px-3" {% if item.open_in_new_tab %} target="_blank" {% endif %} href="{{ content.link }}">{{ content.title }}</a>
+                    <span class="text-white">|</span>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    {% if settings.site_settings.SocialMediaSettings.facebook %}
+                    <a class="text-white px-3" href="{{ settings.site_settings.SocialMediaSettings.facebook }}" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.twitter %}
+                    <a class="text-white px-3" href="{{ settings.site_settings.SocialMediaSettings.twitter }}" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.linkedin %}
+                    <a class="text-white px-3" href="{{ settings.site_settings.SocialMediaSettings.linkedin }}" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.instagram %}
+                    <a class="text-white px-3" href="{{ settings.site_settings.SocialMediaSettings.instagram }}" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    {% endif %}
+                    {% if settings.site_settings.SocialMediaSettings.youtube %}
+                    <a class="text-white pl-3" href="{{ settings.site_settings.SocialMediaSettings.youtube }}" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

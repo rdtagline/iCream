@@ -1,13 +1,12 @@
+{% if settings.site_settings.FooterSettings.heading %}
 <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
     <div class="container text-center py-5">
         <div class="row">
-            {% if settings.site_settings.FooterSettings.heading %}
             <div class="col-12 mb-4">
                 <a href="{{ settings.site_settings.FooterSettings.related_page.url }}" class="navbar-brand m-0">
                     <h1 class="m-0 mt-n2 display-4 text-primary"><span class="text-secondary">i</span>{{ settings.site_settings.FooterSettings.heading }}</h1>
                 </a>
             </div>
-            {% endif %}
             <div class="col-12 mb-4">
                 {% if settings.site_settings.SocialMediaSettings.twitter %}
                 <a class="btn btn-outline-secondary btn-social mr-2" href="{{ settings.site_settings.SocialMediaSettings.twitter }}"><i class="fab fa-twitter"></i></a>
@@ -57,3 +56,4 @@
         </div>
     </div>
 </div>
+{% endif %}
