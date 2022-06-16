@@ -6,6 +6,7 @@ from wagtail.admin.edit_handlers import (FieldPanel, InlinePanel,
                                          MultiFieldPanel, PageChooserPanel)
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.core.models import Orderable
+from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 
 
@@ -120,3 +121,17 @@ class Menu(ClusterableModel):
 
     def __str__(self):
         return self.title
+
+
+@register_setting
+class LogoSettings(BaseSetting):
+    image = models.ForeignKey(
+        "wagtailimages.Image", on_delete=models.SET_NULL, blank=True, null=True)
+
+    panels = [
+        MultiFieldPanel(
+            [
+                ImageChooserPanel("image")
+            ], heading="Logo Settings"
+        )
+    ]
