@@ -6,7 +6,7 @@
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             {% for slide in self.slides %}
-                {% image slide.image fill-900x400 as img %}
+                {% image slide.image original as img %}
                     <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
                         <img class="w-100" src="{{ img.url }}" alt="{{ img.alt }}">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
