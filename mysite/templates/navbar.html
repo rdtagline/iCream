@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
                     {% for content in left_content.menu_items.all %}
-                    <a href="{{ content.link }}" {% if item.open_in_new_tab %} target="_blank" {% endif %} class="nav-item nav-link">{{ content.title }}</a>
+                    <a href="{{ content.link }}" {% if content.open_in_new_tab %} target="_blank" {% endif %} class="nav-item nav-link">{{ content.title }}</a>
                     {% endfor %}
                 </div>
                 {% for content in logo_content.menu_items.all %}
@@ -29,7 +29,7 @@
                 {% endfor %}
                 <div class="navbar-nav mr-auto py-0">
                     {% for content in right_content.menu_items.all %}
-                    <a href="{{ content.link }}" {% if item.open_in_new_tab %} target="_blank" {% endif %} class="nav-item nav-link">{{ content.title }}</a>
+                    <a href="{{ content.link }}" {% if content.open_in_new_tab %} target="_blank" {% endif %} class="nav-item nav-link">{{ content.title }}</a>
                     {% endfor %}
                 </div>
             </div>

@@ -8,7 +8,7 @@
             <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                 {% for content in navigation.menu_items.all %}
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-white px-3" {% if item.open_in_new_tab %} target="_blank" {% endif %} href="{{ content.link }}">{{ content.title }}</a>
+                    <a class="text-white px-3" {% if content.open_in_new_tab %} target="_blank" {% endif %} href="{{ content.link }}">{{ content.title }}</a>
                     <span class="text-white">|</span>
                 </div>
                 {% endfor %}
