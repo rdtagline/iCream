@@ -135,3 +135,10 @@ class ClientBlock(StructBlock):
 
     class Meta:
         template = "blocks/client_block.html"
+
+
+class AboutPageBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+
+    class Meta:
+        template = "blocks/about_page.html"
