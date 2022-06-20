@@ -149,3 +149,17 @@ class ProductPageBlock(ProductBlock):
 
     class Meta:
         template = "blocks/products_page.html"
+
+
+class GalleryPageBlock(StructBlock):
+    heading = CharBlock(max_length=255, required=False)
+    gallery = ListBlock(StructBlock(
+        [
+            ("flavour", TextBlock(max_length=255, required=False)),
+            ("images", ListBlock(StructBlock(
+                [("image", ImageChooserBlock(required=False))])))
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/gallery_page.html"
