@@ -19,6 +19,7 @@ class HomePage(Page):
             ("teams", TeamMemberBlock()),
             ("clients", ClientBlock()),
             ("about_page", AboutPageBlock()),
+            ("products_page", ProductPageBlock()),
         ]
     )
     content_panels = Page.content_panels + [

@@ -142,3 +142,10 @@ class AboutPageBlock(StructBlock):
 
     class Meta:
         template = "blocks/about_page.html"
+
+
+class ProductPageBlock(ProductBlock):
+    heading = CharBlock(max_length=255, required=False)
+
+    class Meta:
+        template = "blocks/products_page.html"
