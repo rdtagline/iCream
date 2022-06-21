@@ -11,9 +11,9 @@
                 <h1 class="section-title position-relative text-center mb-5">{{ self.heading }}</h1>
             </div>
         </div>
-        {% for content in self.products %}
-        {% image content.image original as img %}
         <div class="row">
+            {% for content in self.products %}
+            {% image content.image original as img %}
             <div class="col-lg-3 col-md-6 mb-4 pb-2">
                 <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
                     <div class="bg-primary mt-n5 py-3" style="width: 80px;">
@@ -26,11 +26,11 @@
                     <a href="{{ content.button_page.url }}" class="btn btn-sm btn-secondary">{{ content.button_text }}</a>
                 </div>
             </div>
+            {% endfor %}
             <div class="col-12 text-center">
                 <a href="" class="btn btn-primary py-3 px-5">Load More</a>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

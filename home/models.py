@@ -24,7 +24,7 @@ class HomePage(Page):
             ("about_page", AboutPageBlock()),
             ("products_page", ProductPageBlock()),
             ("gallery_page", GalleryPageBlock()),
-        ]
+        ], blank=True, null=True
     )
     content_panels = Page.content_panels + [
         FieldPanel('content')
