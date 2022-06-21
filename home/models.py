@@ -46,11 +46,13 @@ class ContactPage(AbstractEmailForm):
 
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
+    button_text = models.TextField(blank=True, null=True)
 
     content_panels = AbstractEmailForm.content_panels + [
         FieldPanel('intro'),
         InlinePanel('form_fields', label='Form Fields'),
         FieldPanel('thank_you_text'),
+        FieldPanel('button_text'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname="col6"),
