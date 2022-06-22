@@ -135,3 +135,31 @@ class ClientBlock(StructBlock):
 
     class Meta:
         template = "blocks/client_block.html"
+
+
+class AboutPageBlock(StructBlock):
+    title = CharBlock(max_length=255, required=False)
+
+    class Meta:
+        template = "blocks/about_page.html"
+
+
+class ProductPageBlock(ProductBlock):
+    heading = CharBlock(max_length=255, required=False)
+
+    class Meta:
+        template = "blocks/products_page.html"
+
+
+class GalleryPageBlock(StructBlock):
+    heading = CharBlock(max_length=255, required=False)
+    gallery = ListBlock(StructBlock(
+        [
+            ("flavour", TextBlock(max_length=255, required=False)),
+            ("images", ListBlock(StructBlock(
+                [("image", ImageChooserBlock(required=False))])))
+        ]
+    ))
+
+    class Meta:
+        template = "blocks/gallery_page.html"
