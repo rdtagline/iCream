@@ -12,7 +12,6 @@ from wagtail.snippets.models import register_snippet
 
 @register_setting
 class FooterSettings(BaseSetting):
-    heading = models.CharField(max_length=255, blank=True, null=True)
     related_page = models.ForeignKey(
         'wagtailcore.Page', on_delete=models.SET_NULL, blank=True, null=True)
     left_title = models.CharField(max_length=255, blank=True, null=True)
@@ -31,7 +30,6 @@ class FooterSettings(BaseSetting):
     panels = [
         MultiFieldPanel(
             [
-                FieldPanel("heading"),
                 FieldPanel("related_page"),
                 FieldPanel("left_title"),
                 FieldPanel("address"),
