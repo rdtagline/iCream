@@ -1,24 +1,22 @@
 {% load wagtailimages_tags %}
-{% load static %}
 
-<!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5 pb-5">
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             {% for slide in self.slides %}
-                {% image slide.image original as img %}
-                    <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
-                        <img class="w-100" src="{{ img.url }}" alt="{{ img.alt }}">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 900px;">
-                                <h4 class="text-white text-uppercase mb-md-3">{{ slide.caption }}</h4>
-                                <h1 class="display-3 text-white mb-md-4">{{ slide.title }}</h1>
-                                {% if slide.button_page %}
-                                    <a href="{{ slide.button_page.url }}" class="btn btn-primary py-md-3 px-md-5 mt-2">{{ slide.button_text }}</a>
-                                {% else %}{% endif %}
-                            </div>
-                        </div>
+            {% image slide.image original as img %}
+            <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+                <img class="w-100" src="{{ img.url }}" alt="{{ img.alt }}">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-md-3">{{ slide.caption }}</h4>
+                        <h1 class="display-3 text-white mb-md-4">{{ slide.title }}</h1>
+                        {% if slide.button_page %}
+                        <a href="{{ slide.button_page.url }}" class="btn btn-primary py-md-3 px-md-5 mt-2">{{ slide.button_text }}</a>
+                        {% endif %}
                     </div>
+                </div>
+            </div>
             {% endfor %}
         </div>
         <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
@@ -33,4 +31,3 @@
         </a>
     </div>
 </div>
-<!-- Carousel End -->

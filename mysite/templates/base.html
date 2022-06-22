@@ -16,6 +16,10 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         
@@ -28,7 +32,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         
         {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
+        <!-- Override this in templates to add extra stylesheets -->
         {% endblock %}
     </head>
     
@@ -36,12 +40,15 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
         
-        {% include "top_bar.html" %}
-        {% include "navbar.html" %}
+        {% include "top_bar.html" %} <!-- Topbar -->
         
+        {% include "navbar.html" %} <!-- Navbar -->
+        
+        <!-- Start content -->
         {% block content %}{% endblock %}
+        <!-- End content -->
         
-        {% include "footer.html" %}
+        {% include "footer.html" %} <!-- Footer -->
 
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -51,12 +58,14 @@
         <script type="text/javascript" src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'mail/contact.js' %}"></script>
         
-        {# Global javascript #}
+        <!-- Global javascript -->
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
         
         {% block extra_js %}
-        {# Override this in templates to add extra javascript #}
+        <!-- Override this in templates to add extra javascript -->
         {% endblock %}
     </body>
 </html>

@@ -1,15 +1,11 @@
-{% extends "home/home_page.html" %}
+{% extends "home/contact_page.html" %}
 {% load wagtailcore_tags %}
 
-{% block content %}
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <h1 class="section-title position-relative text-center mb-5">{{ self.thank_you_text|richtext }}</h1>
-            </div>
-        </div>
-    </div>
+{% block success %}
+
+<div class='alert alert-success'>
+    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>x</button>
+    <strong>{{ self.thank_you_text }}</strong>
 </div>
 
 {% endblock %}

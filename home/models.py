@@ -45,7 +45,7 @@ class ContactPage(AbstractEmailForm):
     landing_page_template = "home/contact_page_landing.html"
 
     intro = RichTextField(blank=True)
-    thank_you_text = RichTextField(blank=True)
+    thank_you_text = models.TextField(blank=True, null=True)
     button_text = models.TextField(blank=True, null=True)
 
     content_panels = AbstractEmailForm.content_panels + [

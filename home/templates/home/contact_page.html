@@ -1,9 +1,11 @@
 {% extends "home/home_page.html" %}
-{% load static wagtailcore_tags %}
+{% load wagtailcore_tags %}
 
 {% block content %}
-{% include "blocks/about_page.html" %}
 
+{% include "blocks/about_page.html" %} <!-- Page Header -->
+
+<!-- Contact Form -->
 <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="row justify-content-center">
@@ -13,10 +15,10 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-9">
-                <form action="{% pageurl page %}" method="POST">
-                    {% csrf_token %}
-                    <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
+                <div class="contact-form bg-light rounded p-5">
+                    <div id="success">{% block success %}{% endblock %}</div>
+                    <form action="{% pageurl page %}" method="POST">
+                        {% csrf_token %}
                         <div class="form-row">
                             <div class="col-sm-6 control-group"> 
                                 <input type="text" class="form-control p-4" name="name" id="id_name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
@@ -38,8 +40,8 @@
                         <div>
                             <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">{{ self.button_text }}</button>
                         </div> 
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
