@@ -15,6 +15,12 @@ cd iCream
 cp .env.sample .env
 ```
 
+### Install
+
+```sh
+pip install -r requirements.txt
+```
+
 ### Migrate the database
 
 ```sh
