@@ -5,7 +5,7 @@
 Clone the project using Git.
 
 ```sh
-https://github.com/rdtagline/iCream.git
+git clone git@github.com:rdtagline/iCream.git
 cd iCream
 ```
 
