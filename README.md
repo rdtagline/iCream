@@ -34,5 +34,3 @@ python manage.py createsuperuser
 ```
 
 The project is now running on http://127.0.0.1:8000.
-
-Hurray! Check on the http://127.0.0.1:8080
