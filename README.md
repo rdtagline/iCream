@@ -9,28 +9,22 @@ git clone git@github.com:rdtagline/iCream.git
 cd iCream
 ```
 
-### Create .env file
+### Run the docker containers
 
 ```sh
-cp .env.sample .env
-```
-
-### Install
-
-```sh
-pip install -r requirements.txt
+docker-compose up -d --build
 ```
 
 ### Migrate the database
 
 ```sh
-python manage.py migrate
+docker-compose exec web python manage.py migrate
 ```
 
 ### Create the super user
 
 ```sh
-python manage.py createsuperuser
+docker-compose exec web python manage.py createsuperuser
 ```
 
-The project is now running on http://127.0.0.1:8000.
+The project is now running on http://127.0.0.1:8000
