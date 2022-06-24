@@ -1,1 +1,1 @@
-web: gunicorn biker.wsgi
+web: gunicorn mysite.wsgi
